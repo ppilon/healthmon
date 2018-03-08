@@ -1,2 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'auth';
+@import 'colors';
+
+.auth-view {
+  align-items: center;
+  background-color: $light-gray;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  padding-bottom: 40px;
+}
