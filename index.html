@@ -14,16 +14,30 @@
     </head>
     <body>
       <div class="auth-view text-center">
-        <form class="form-signin">
+        <form class="form-center form-signin">
           <div class="notification-area"> </div>
           <i class="fas fa-heartbeat fa-10x" class="logo"></i>
           <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control" name="credentials[email]" placeholder="Email address" required autofocus>
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" name="credentials[password]" placeholder="Password" required>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <label for="signin-email" class="sr-only">Email address</label>
+          <input type="email" id="signin-email" class="form-control" name="credentials[email]" placeholder="Email address" required autofocus>
+          <label for="signin-password" class="sr-only">Password</label>
+          <input type="password" id="signin-password" class="form-control" name="credentials[password]" placeholder="Password" required>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
           <p class="mt-5 mb-3 text-muted copyright">&copy; HealthMonitor LLC</p>
+          <a href="#signup" class="toggle-signup-view"> No Account? Click Here to Signup </a>
+        </form>
+        <form class="form-center form-signup">
+          <div class="notification-area"> </div>
+          <i class="fas fa-heartbeat fa-10x" class="logo"></i> <br>
+          <label for="signup-email"> Email Address: </label>
+          <input type="text" class="form-control" id="signup-email" name="credentials[email]">
+          <label for="signup-password"> Password: </label>
+          <input type="password" class="form-control" id="singup-password" name="credentials[password]">
+          <label for="signup-password_confirmation"> Password Confirmation: </label>
+          <input type="password" class="form-control" id="signup-password-confirmation" name="credentials[password_confirmation]">
+          <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Sign Up</button>
+          <p class="mt-5 mb-3 text-muted copyright">&copy; HealthMonitor LLC</p>
+          <a href="#login" class="toggle-login-view"> Ready to Login </a>
         </form>
       </div>
     </body>
