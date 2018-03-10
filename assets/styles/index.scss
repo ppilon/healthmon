@@ -1,7 +1,14 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import 'auth';
+@import 'variables';
 @import 'colors';
+@import 'auth';
+@import 'navbar';
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: $light-gray;
+}
 
 .auth-view {
   align-items: center;
@@ -12,6 +19,65 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   padding-bottom: 40px;
 }
 
+.logged-in-view {
+  display: none;
+}
+
 .form-signup {
   display: none;
+}
+
+.col-fixed {
+  position: fixed;
+  width: $fixed-width;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+.sidebar {
+  background-color: $dark-blue;
+  height: 100%;
+}
+
+.user-nav-icon {
+  margin-right: 5px;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.sidebar-menu {
+  margin-top: 30px;
+}
+
+.sidebar-menu li a{
+  color: $white;
+}
+
+.icon {
+  margin-right: 7px;
+}
+
+@media (min-width: '768px') {
+  .sidebar {
+    display: block;
+  }
+}
+
+
+@media (max-width: '768px') {
+  .sidebar {
+    display: none;
+  }
+}
+
+.sidebar-show {
+  display: block !important;
+}
+
+.sidebar-hide {
+  display: none !important;
 }

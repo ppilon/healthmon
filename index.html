@@ -11,12 +11,14 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
       <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
     </head>
     <body>
       <div class="auth-view text-center">
         <form class="form-center form-signin">
           <div class="notification-area"> </div>
-          <i class="fas fa-heartbeat fa-10x" class="logo"></i>
+          <i class="fas fa-heartbeat fa-10x logo"></i>
           <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
           <label for="signin-email" class="sr-only">Email address</label>
           <input type="email" id="signin-email" class="form-control" name="credentials[email]" placeholder="Email address" required autofocus>
@@ -28,7 +30,7 @@
         </form>
         <form class="form-center form-signup">
           <div class="notification-area"> </div>
-          <i class="fas fa-heartbeat fa-10x" class="logo"></i> <br>
+          <i class="fas fa-heartbeat fa-10x logo"></i> <br>
           <label for="signup-email"> Email Address: </label>
           <input type="text" class="form-control" id="signup-email" name="credentials[email]">
           <label for="signup-password"> Password: </label>
@@ -39,6 +41,34 @@
           <p class="mt-5 mb-3 text-muted copyright">&copy; HealthMonitor LLC</p>
           <a href="#login" class="toggle-login-view"> Ready to Login </a>
         </form>
+      </div>
+      <div class="container-fluid logged-in-view">
+        <div class="row">
+          <div class="nav brand-nav">
+            <div class="brand">
+              <span><i class="fas fa-heartbeat"></i></span>
+              <span class="brand-text"> HealthMon </span>
+            </div>
+            <i class="fas fa-align-justify toggle-sidebar"></i>
+          </div>
+          <div class="nav main-nav">
+            <ul class="no-bullets nav navbar-nav navbar-right user-nav">
+                <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><span class="name"> </span><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="logout"><i class="fas fa-lock user-nav-icon"></i>Logout</a></li>
+                  </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-fixed sidebar">
+            <ul class="no-bullets sidebar-menu">
+              <li> <a href=""><i class="fas fa-tachometer-alt icon"></i>Dashboard </a> </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </body>
 </html>

@@ -9,6 +9,14 @@ const authHandlers = function () {
     $('.form-signin').toggle()
     $('.form-signup').toggle()
   })
+  $('.logout').on('click', onLogout)
+}
+
+const onLogout = function (event) {
+  event.preventDefault()
+  api.logout()
+    .then(ui.onLogoutSuccess)
+    .catch(ui.onLogoutError)
 }
 
 const onSignUp = function (event) {

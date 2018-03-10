@@ -1,0 +1,71 @@
+.nav {
+  height: $navbar-height;
+}
+
+.brand-nav {
+  background-color: $dark-blue;
+  border-bottom: 1px solid #000019;
+  float: left;
+  height: 50px;
+  text-align: center;
+  width: $fixed-width;
+}
+
+.main-nav {
+  background-color: $white;
+  float: left;
+  width: calc(100vw - #{$fixed-width});
+}
+
+.user-nav .fa {
+  margin-right: 5px;
+}
+
+.brand {
+  display: inline-block;
+  height: $navbar-height !important;
+  line-height: $navbar-height;
+}
+
+.brand span {
+  color: $white;
+}
+
+.toggle-sidebar {
+  line-height: 50px;
+  color: white;
+}
+
+.main-nav-menu {
+  padding: 15px;
+}
+
+@media (min-width: '768px') {
+  .toggle-sidebar {
+    display: none;
+  }
+  .user-nav {
+    margin-right: 70px;
+  }
+}
+
+@media (max-width: '768px') {
+
+  .user-nav {
+    margin-left: 20px;
+    width: 200px;
+  }
+
+  .dropdown {
+    background-color: white;
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+
+  .brand-nav {
+    width: 100%;
+  }
+
+}

@@ -1,9 +1,29 @@
 const notifications = require('../../../lib/notifications')
+const store = require('../store')
 
 const onSignInSuccess = function (data) {
   notifications.newNotification('success', 'Login Successful')
   $('#signin-email').val('')
   $('#signin-password').val('')
+  $('.auth-view').toggle()
+  $('.logged-in-view').toggle()
+  $('.name').text(data.user.email)
+  store.user.id = data.user.id
+  store.user.email = data.user.email
+  store.user.token = data.user.token
+  store.user.user_profile = data.user.user_profile
+  sessionStorage.setItem('user', JSON.stringify(store.user))
+}
+
+const onLogoutSuccess = function () {
+  notifications.newNotification('success', 'Logout Successful')
+  $('.auth-view').toggle()
+  $('.logged-in-view').toggle()
+  sessionStorage.removeItem('user')
+}
+
+const onLogoutError = function () {
+  console.log('error')
 }
 
 const onSignInError = function (error) {
@@ -26,5 +46,7 @@ module.exports = {
   onSignInSuccess,
   onSignInError,
   onSignUpError,
-  onSignUpSuccess
+  onSignUpSuccess,
+  onLogoutSuccess,
+  onLogoutError
 }
