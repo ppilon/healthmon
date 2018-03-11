@@ -17,6 +17,10 @@
   width: calc(100vw - #{$fixed-width});
 }
 
+.dropdown {
+      z-index: 1;
+}
+
 .user-nav .fa {
   margin-right: 5px;
 }
@@ -38,6 +42,10 @@
 
 .main-nav-menu {
   padding: 15px;
+}
+
+.sidebar-open {
+  margin-left: $fixed-width;
 }
 
 @media (min-width: '768px') {

@@ -1,0 +1,81 @@
+    <div class="notification-area"> </div>
+<div class="row">
+  <div class="col-md-12 header">
+    <div class="profile-navbar">
+      <ul class="no-bullets">
+        <li> <a href="" class="toggle-update-info"> Update Info </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="update-info container row">
+  <div class="col-md-12">
+    <form class="user-update-form">
+      <h2> Update Profile </h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-field">
+            <label for="#first-name">First Name</label>
+            <input type="text" class="form-control" id="first-name" name="user[user_profile_attributes[first_name]]" value="{{user.user_profile.first_name}}">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-field">
+            <label for="#last-name">Last Name</label>
+            <input type="text" class="form-control" id="last-name" name="user[user_profile_attributes[last_name]]" value="{{user.user_profile.last_name}}">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-field">
+            <label for="#email">Email Address</label>
+            <input type="text" class="form-control" id="email" name="user[email]" value="{{user.email}}">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-field">
+            <span class="bold">Gender </span>
+            <div class="radio">
+              <label class="radio-inline">
+                <input type="radio" value="male" name="user[user_profile_attributes[sex]]"> Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" value="female" name="user[user_profile_attributes[sex]]"> Female
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-field">
+            <label for="#skin-type">Skin Type</label>
+            <input type="text" class="form-control" id="skin-type" name="user[user_profile_attributes[fitzpatrick_skin_type]]" value="{{user.user_profile.fitzpatrick_skin_type}}">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-field">
+            <label for="#blood-type">Blood Type</label>
+            <select class="form-control">
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB- </option>
+            </select>
+            <!-- <input type="text" class="form-control" id="blood-type" name="user[user_profile_attributes[blood_type]]"> -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input type="submit" class="btn btn-primary pull-right" value="Update Profile">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
