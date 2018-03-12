@@ -94,8 +94,7 @@ body {
 }
 
 .notification-area {
-  position: fixed;
-  top: 50;
+  width: 95%;
 }
 
 .profile-navbar {
@@ -119,6 +118,16 @@ body {
 
 .user-update-form {
   display: none;
+}
+
+.change-password-form {
+  display: none;
+  margin-top: 50px;
+}
+
+.change-password-btn {
+  margin-top: 20px;
+  float: right;
 }
 
 @media (min-width: '768px') {

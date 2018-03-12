@@ -6,11 +6,20 @@ const onUpdateUserSuccess = function (data) {
 }
 
 const onUpdateUserError = function (error) {
-  console.log(error)
-  notifications.newNotification('danger', error)
+  notifications.newNotification('danger', error.statusText)
+}
+
+const onChangePasswordSuccess = function () {
+  notifications.newNotification('success', 'Change Password Successful')
+}
+
+const onChangePasswordError = function (error) {
+  notifications.newNotification('danger', error.statusText)
 }
 
 module.exports = {
   onUpdateUserSuccess,
-  onUpdateUserError
+  onUpdateUserError,
+  onChangePasswordSuccess,
+  onChangePasswordError
 }

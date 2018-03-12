@@ -1,15 +1,35 @@
-    <div class="notification-area"> </div>
 <div class="row">
   <div class="col-md-12 header">
+    <div class="notification-area"> </div>
     <div class="profile-navbar">
       <ul class="no-bullets">
         <li> <a href="" class="toggle-update-info"> Update Info </a></li>
+        <li> <a href="" class="toggle-change-pw"> Change Password </a></li>
       </ul>
     </div>
   </div>
 </div>
 <div class="update-info container row">
   <div class="col-md-12">
+    <form class="change-password-form">
+      <h2> Change Password </h2>
+      <div class="row">
+        <div class="col-md-6">
+          <label> Old Password </label>
+          <input type="password" class="form-control" name="passwords[old]">
+        </div>
+        <div class="col-md-6">
+          <label> New Password </label>
+          <input type="password" class="form-control" name="passwords[new]">
+          <span class="message"> </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input type="submit" class="btn btn-primary change-password-btn" value="Change Password">
+        </div>
+      </div>
+    </form>
     <form class="user-update-form">
       <h2> Update Profile </h2>
       <div class="row">

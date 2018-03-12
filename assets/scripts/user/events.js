@@ -11,6 +11,7 @@ const userHandlers = function () {
     const updateUserTemp = updateUserTemplate({ user: store.user })
     $('.content').append(updateUserTemp)
   })
+  $('body').on('submit', '.change-password-form', onChangePassword)
 }
 
 const onUpdateUser = function (event) {
@@ -20,6 +21,14 @@ const onUpdateUser = function (event) {
   api.updateUser(data)
     .then(ui.onUpdateUserSuccess)
     .catch(ui.onUpdateUserError)
+}
+
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.changePassword(data)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onChangePasswordError)
 }
 
 module.exports = {

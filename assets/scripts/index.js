@@ -11,13 +11,18 @@ $(() => {
   userEvents.userHandlers()
   setAPIOrigin(location, config)
   $('body').on('click', '.toggle-sidebar', function () {
-    console.log('clicked')
     $('.sidebar').toggleClass('sidebar-show')
     $('.main').toggleClass('main-small')
   })
   $('body').on('click', '.toggle-update-info', function (event) {
     event.preventDefault()
+    $('.change-password-form').hide()
     $('.user-update-form').show()
+  })
+  $('body').on('click', '.toggle-change-pw', function (event) {
+    event.preventDefault()
+    $('.user-update-form').hide()
+    $('.change-password-form').show()
   })
   if (store.user.token != null) {
     $('.auth-view').toggle()
