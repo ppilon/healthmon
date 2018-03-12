@@ -25,7 +25,19 @@ const changePassword = function (data) {
   })
 }
 
+const deleteAccount = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/users/' + store.user.id,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   updateUser,
-  changePassword
+  changePassword,
+  deleteAccount
 }

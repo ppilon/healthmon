@@ -11,7 +11,16 @@ const userHandlers = function () {
     const updateUserTemp = updateUserTemplate({ user: store.user })
     $('.content').append(updateUserTemp)
   })
+  $('body').on('click', '.delete-account', onDeleteAccount)
   $('body').on('submit', '.change-password-form', onChangePassword)
+}
+
+const onDeleteAccount = function (event) {
+  console.log('worked')
+  event.preventDefault()
+  api.deleteAccount()
+    .then(ui.onDeleteAccountSuccess)
+    .catch(ui.onDeleteAccountError)
 }
 
 const onUpdateUser = function (event) {

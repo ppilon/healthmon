@@ -17,9 +17,21 @@ const onChangePasswordError = function (error) {
   notifications.newNotification('danger', error.statusText)
 }
 
+const onDeleteAccountSuccess = function () {
+  $('.auth-view').toggle()
+  $('.logged-in-view').toggle()
+  sessionStorage.removeItem('user')
+}
+
+const onDeleteAccountError = function (error) {
+  console.log(error)
+}
+
 module.exports = {
   onUpdateUserSuccess,
   onUpdateUserError,
   onChangePasswordSuccess,
-  onChangePasswordError
+  onChangePasswordError,
+  onDeleteAccountError,
+  onDeleteAccountSuccess
 }

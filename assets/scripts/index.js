@@ -24,6 +24,9 @@ $(() => {
     $('.user-update-form').hide()
     $('.change-password-form').show()
   })
+  $('body').on('click', '.toggle-destroy-account', function (event) {
+    event.preventDefault()
+  })
   if (store.user.token != null) {
     $('.auth-view').toggle()
     $('.logged-in-view').toggle()
