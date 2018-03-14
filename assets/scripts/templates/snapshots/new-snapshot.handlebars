@@ -5,29 +5,32 @@
         <div class="row">
           <div class="col-md-4">
             <label> Unit </label>
-            <input type="input" class="form-control" name="health_snapshot[unit]">
+            <select name="health_snapshot[unit]" class="form-control">
+              <option value="volvo">ML</option>
+              <option value="saab">COUNT</option>
+            </select>
           </div>
           <div class="col-md-4">
             <label> Value </label>
-            <input type="input" class="form-control" name="health_snapshot[value]">
+            <input type="input" class="form-control" name="health_snapshot[value]" placeholder="Must be a number">
           </div>
           <div class="col-md-4">
             <label> Snapshot Type </label>
-            <input type="input" class="form-control" name="health_snapshot[snapshot_type]">
+            <input type="input" class="form-control" name="health_snapshot[snapshot_type]" placeholder="example: heartbeat">
           </div>
         </div>
         <div class="row">
           <div class="col-md-4">
             <label> Source Name </label>
-            <input type="input" class="form-control" name="health_snapshot[source_name]">
+            <input type="input" class="form-control" name="health_snapshot[source_name]" placeholder="example: Phil's iPhone">
           </div>
           <div class="col-md-4">
             <label> Start Date </label>
-            <input type="input" class="form-control" name="health_snapshot[start_date]">
+            <input type="input" class="form-control" name="health_snapshot[start_date]" placeholder="example: 2018-03-13 23:12:29 -0400">
           </div>
           <div class="col-md-4">
             <label> End Date </label>
-            <input data-format="dd/MM/yyyy hh:mm:ss" type="text" class="form-control" name="health_snapshot[end_date]"></input>
+            <input data-format="dd/MM/yyyy hh:mm:ss" type="text" class="form-control" name="health_snapshot[end_date]" placeholder="example: 2018-03-13 23:12:29 -0400"></input>
           </div>
         </div>
         <div class="row">
