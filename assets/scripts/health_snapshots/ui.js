@@ -29,7 +29,7 @@ const onCreateSnapshotSuccess = function (data) {
     '<td>' + data.source_name + '</td>' + '<td>' + data.snapshot_type + '</td>' +
     '<td>' + data.start_date + '</td>' + '<td>' + data.end_date + '</td>' +
     '<td>' + data.unit + '</td>' + '<td>' +
-    '<td> <button class="btn btn-primary" value="' + data.id + '"> Edit</button> </td>' +
+    '<td> <button class="btn btn-primary edit-snapshot-btn" value="' + data.id + '"> Edit</button> </td>' +
     '<td> <button class="btn btn-danger delete-snapshot" value="' + data.id + '"> Delete</button> </td>' +
     '</tr>'
   )

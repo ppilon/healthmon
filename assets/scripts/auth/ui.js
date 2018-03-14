@@ -23,7 +23,6 @@ const onLogoutSuccess = function () {
 }
 
 const onLogoutError = function () {
-  console.log('error')
 }
 
 const onSignInError = function (error) {
