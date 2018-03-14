@@ -7,7 +7,6 @@ const onGetSnapshotsSuccess = function (data) {
   const snapshots = snapshotsTemplate({ health_snapshots: data })
   const noSnapshots = snapshotsTemplate()
   const snapshotForm = newSnapshotTemplate()
-  console.log('get ran')
   $('.content').empty()
   if (data.length > 0) {
     $('.content').append(snapshots)

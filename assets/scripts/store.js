@@ -13,8 +13,6 @@ if ('user' in sessionStorage) {
   $('.name').text(user.email)
 }
 
-console.log(user)
-
 module.exports = {
   user
 }

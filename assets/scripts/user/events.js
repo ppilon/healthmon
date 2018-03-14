@@ -16,7 +16,6 @@ const userHandlers = function () {
 }
 
 const onDeleteAccount = function (event) {
-  console.log('worked')
   event.preventDefault()
   api.deleteAccount()
     .then(ui.onDeleteAccountSuccess)
@@ -26,7 +25,6 @@ const onDeleteAccount = function (event) {
 const onUpdateUser = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.updateUser(data)
     .then(ui.onUpdateUserSuccess)
     .catch(ui.onUpdateUserError)

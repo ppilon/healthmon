@@ -1,7 +1,6 @@
 const notifications = require('../../../lib/notifications')
 
 const onUpdateUserSuccess = function (data) {
-  console.log(data)
   notifications.newNotification('success', 'Update Successful')
 }
 
@@ -20,11 +19,12 @@ const onChangePasswordError = function (error) {
 const onDeleteAccountSuccess = function () {
   $('.auth-view').toggle()
   $('.logged-in-view').toggle()
+  $('.modal-backdrop').remove()
   sessionStorage.removeItem('user')
 }
 
 const onDeleteAccountError = function (error) {
-  console.log(error)
+  notifications.newNotification('danger', error.statusText)
 }
 
 module.exports = {

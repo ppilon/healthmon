@@ -6,8 +6,8 @@
           <div class="col-md-4">
             <label> Unit </label>
             <select name="health_snapshot[unit]" class="form-control">
-              <option value="volvo">ML</option>
-              <option value="saab">COUNT</option>
+              <option value="ml">ML</option>
+              <option value="count">COUNT</option>
             </select>
           </div>
           <div class="col-md-4">
@@ -26,11 +26,11 @@
           </div>
           <div class="col-md-4">
             <label> Start Date </label>
-            <input type="input" class="form-control" name="health_snapshot[start_date]" placeholder="example: 2018-03-13 23:12:29 -0400">
+            <input class="form-control" type="datetime-local" name="health_snapshot[start_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
           </div>
           <div class="col-md-4">
             <label> End Date </label>
-            <input data-format="dd/MM/yyyy hh:mm:ss" type="text" class="form-control" name="health_snapshot[end_date]" placeholder="example: 2018-03-13 23:12:29 -0400"></input>
+            <input class="form-control" type="datetime-local" name="health_snapshot[end_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
           </div>
         </div>
         <div class="row">

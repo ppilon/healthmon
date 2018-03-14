@@ -13,7 +13,6 @@ const getSnapshots = function () {
 }
 
 const createSnapshot = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/health_snapshots',
     method: 'POST',
@@ -37,7 +36,6 @@ const deleteSnapshot = function (id) {
 }
 
 const editSnapshot = function(id, data) {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/health_snapshots/' + id,
     method: 'PATCH',
