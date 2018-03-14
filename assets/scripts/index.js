@@ -5,14 +5,20 @@ const config = require('./config')
 const authEvents = require('./auth/events')
 const store = require('./store')
 const userEvents = require('./user/events')
+const snapshotEvents = require('./health_snapshots/events')
 
 $(() => {
   authEvents.authHandlers()
   userEvents.userHandlers()
+  snapshotEvents.snapshotHandlers()
   setAPIOrigin(location, config)
   $('body').on('click', '.toggle-sidebar', function () {
     $('.sidebar').toggleClass('sidebar-show')
     $('.main').toggleClass('main-small')
+  })
+  $('body').on('click', '.edit-snapshot-btn', function(){
+    $('.snapshot-id').val($(this).val())
+    $('#edit-snapshot-modal').modal('show')
   })
   $('body').on('click', '.toggle-update-info', function (event) {
     event.preventDefault()

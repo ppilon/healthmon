@@ -8,7 +8,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   font-family: 'Lato', sans-serif;
   background-color: $light-gray;
-  overflow: hidden;
+}
+
+.snapshots-table {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: 30px;
 }
 
 .auth-view {
@@ -22,6 +29,10 @@ body {
 
 .logged-in-view {
   display: none;
+}
+
+.sidebar-menu li {
+  margin-bottom: 20px;
 }
 
 .form-signup {
@@ -40,6 +51,7 @@ body {
 .sidebar {
   background-color: $dark-blue;
   height: 100%;
+  z-index: 1;
 }
 
 .user-nav-icon {
@@ -62,9 +74,14 @@ body {
   margin-right: 7px;
 }
 
+.no-pad {
+  padding-left: 0px;
+}
+
 .content {
   height: 100vh;
   margin-left: $fixed-width;
+  padding-right: 15px;
 }
 
 .profile-header {
@@ -75,6 +92,11 @@ body {
 .form-field {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.create-snapshot-btn {
+  margin-top: 10px;
+  float: right;
 }
 
 .main-small {
@@ -120,6 +142,8 @@ body {
   display: none;
 }
 
+
+
 .change-password-form {
   display: none;
   margin-top: 50px;
@@ -136,6 +160,9 @@ body {
   }
   .main {
     margin-left: 0px;
+  }
+  .content {
+    width: calc(100vw - #{$fixed-width});
   }
 }
 
