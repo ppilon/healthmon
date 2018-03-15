@@ -33,6 +33,8 @@ const onCreateSnapshotSuccess = function (data) {
     '<td> <button class="btn btn-danger delete-snapshot" value="' + data.id + '"> Delete</button> </td>' +
     '</tr>'
   )
+  const form = document.getElementsByName('create-snapshot')[0]
+  form.reset()
 }
 
 const onCreateSnapshotError = function (error) {
@@ -48,6 +50,8 @@ const onDeleteSnapshotSuccess = function () {
 
 const onEditSnapshotSuccess = function () {
   notifications.newNotification('success', 'Successfully Edited Snapshot')
+  const form = document.getElementsByName('edit-snapshot')[0]
+  form.reset()
   $('.modal-backdrop').remove()
   api.getSnapshots()
     .then(onGetSnapshotsSuccess)

@@ -1,6 +1,8 @@
 const notifications = require('../../../lib/notifications')
 
 const onUpdateUserSuccess = function (data) {
+  const form = document.getElementsByName('user-update-form')[0]
+  form.reset()
   notifications.newNotification('success', 'Update Successful')
 }
 
@@ -9,6 +11,8 @@ const onUpdateUserError = function (error) {
 }
 
 const onChangePasswordSuccess = function () {
+  const form = document.getElementsByName('change-password-form')[0]
+  form.reset()
   notifications.newNotification('success', 'Change Password Successful')
 }
 

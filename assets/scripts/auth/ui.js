@@ -3,8 +3,8 @@ const store = require('../store')
 
 const onSignInSuccess = function (data) {
   notifications.newNotification('success', 'Login Successful')
-  $('#signin-email').val('')
-  $('#signin-password').val('')
+  const form = document.getElementsByName('form-signin')[0]
+  form.reset()
   $('.auth-view').toggle()
   $('.logged-in-view').toggle()
   $('.name').text(data.user.email)
@@ -34,6 +34,8 @@ const onSignInError = function (error) {
 const onSignUpSuccess = function (data) {
   $('.form-signin').toggle()
   $('.form-signup').toggle()
+  const form = document.getElementsByName('form-signup')[0]
+  form.reset()
   notifications.newNotification('success', 'Signup Successful')
 }
 
