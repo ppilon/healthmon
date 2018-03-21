@@ -1,15 +1,12 @@
 'use strict'
 
-const user = {
+let user = {
 
 }
 
 if ('user' in sessionStorage) {
   const userData = JSON.parse(sessionStorage.getItem('user'))
-  user.id = userData.id
-  user.email = userData.email
-  user.token = userData.token
-  user.user_profile = userData.user_profile
+  user = userData
   $('.name').text(user.email)
 }
 

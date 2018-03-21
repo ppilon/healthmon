@@ -1,7 +1,10 @@
 {
-  "name": "ga-wdi-boston.browser-template",
+  "name": "healthmon",
   "version": "0.0.3",
   "private": true,
+  "scripts": {
+    "generate-docs": "node_modules/.bin/jsdoc --configure node_modules/jsdoc/.jsdoc.json --verbose"
+  },
   "license": {
     "software": "GNU GPLv3",
     "content": "CC­BY­NC­SA 4.0"
@@ -38,6 +41,7 @@
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.5.0",
     "html-loader": "^0.5.1",
+    "jsdoc": "^3.5.5",
     "load-grunt-config": "^0.19.2",
     "mocha": "^3.5.0",
     "node-libs-browser": "^2.0.0",

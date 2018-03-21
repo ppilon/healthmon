@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+      auth/ui.js - Documentation
+  </title>
+
+  <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+  <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+
+  
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+  0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+  mixpanel.init("1919205b2da72e4da3b9b6639b444d59");</script>
+  <!-- end Mixpanel -->
+</head>
+
+<body>
+  <svg style="display: none;">
+    <defs>
+      <symbol id="linkIcon" fill="#706d77" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger" class="navicon-button x">
+    <div class="navicon"></div>
+  </label>
+
+  <label for="nav-trigger" class="overlay"></label>
+
+  <div class="top-nav-wrapper">
+    <ul>
+      <li >
+        <a href="index.html">
+          
+            <svg fill="#6D6D6D" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          
+          
+        </a>
+      </li>
+
+      
+
+    </ul>
+  </div>
+
+  <nav>
+    <h3 class="reference-title">
+      Healthmon
+    </h3>
+
+    <h3>Modules</h3><ul><li id="Authentication-nav"><a href="module-Authentication.html">Authentication</a><ul class='methods'><li data-type="method" id="Authentication-authHandlers-nav"><a href="module-Authentication.html#~authHandlers">authHandlers</a></li><li data-type="method" id="Authentication-logout-nav"><a href="module-Authentication.html#~logout">logout</a></li><li data-type="method" id="Authentication-onLogout-nav"><a href="module-Authentication.html#~onLogout">onLogout</a></li><li data-type="method" id="Authentication-onLogoutError-nav"><a href="module-Authentication.html#~onLogoutError">onLogoutError</a></li><li data-type="method" id="Authentication-onLogoutSuccess-nav"><a href="module-Authentication.html#~onLogoutSuccess">onLogoutSuccess</a></li><li data-type="method" id="Authentication-onSignIn-nav"><a href="module-Authentication.html#~onSignIn">onSignIn</a></li><li data-type="method" id="Authentication-onSignInError-nav"><a href="module-Authentication.html#~onSignInError">onSignInError</a></li><li data-type="method" id="Authentication-onSignInSuccess-nav"><a href="module-Authentication.html#~onSignInSuccess">onSignInSuccess</a></li><li data-type="method" id="Authentication-onSignInSuccess-nav"><a href="module-Authentication.html#~onSignInSuccess">onSignInSuccess</a></li><li data-type="method" id="Authentication-onSignup-nav"><a href="module-Authentication.html#~onSignup">onSignup</a></li><li data-type="method" id="Authentication-onSignUpError-nav"><a href="module-Authentication.html#~onSignUpError">onSignUpError</a></li><li data-type="method" id="Authentication-signIn-nav"><a href="module-Authentication.html#~signIn">signIn</a></li><li data-type="method" id="Authentication-signUp-nav"><a href="module-Authentication.html#~signUp">signUp</a></li><li data-type="method" id="Authentication-toggleAuthView-nav"><a href="module-Authentication.html#~toggleAuthView">toggleAuthView</a></li></ul></li><li id="HealthSnapshots-nav"><a href="module-HealthSnapshots.html">HealthSnapshots</a><ul class='methods'><li data-type="method" id="HealthSnapshots-createSnapshot-nav"><a href="module-HealthSnapshots.html#~createSnapshot">createSnapshot</a></li><li data-type="method" id="HealthSnapshots-deleteSnapshot-nav"><a href="module-HealthSnapshots.html#~deleteSnapshot">deleteSnapshot</a></li><li data-type="method" id="HealthSnapshots-editSnapshot-nav"><a href="module-HealthSnapshots.html#~editSnapshot">editSnapshot</a></li><li data-type="method" id="HealthSnapshots-getSnapshots-nav"><a href="module-HealthSnapshots.html#~getSnapshots">getSnapshots</a></li></ul></li><li id="Users-nav"><a href="module-Users.html">Users</a><ul class='methods'><li data-type="method" id="Users-changePassword-nav"><a href="module-Users.html#~changePassword">changePassword</a></li><li data-type="method" id="Users-deleteAccount-nav"><a href="module-Users.html#~deleteAccount">deleteAccount</a></li><li data-type="method" id="Users-updateUser-nav"><a href="module-Users.html#~updateUser">updateUser</a></li></ul></li></ul>
+  </nav>
+
+  <div id="main">
+    
+      <h1 class="page-title">
+        auth/ui.js
+      </h1>
+    
+
+    
+      
+
+<section>
+  <article>
+    <pre class="prettyprint source linenums"><code>/**
+ *  @fileOverview Manages the interface for Authentication
+ *
+ *  @author       Phil Pilon
+ *  @requires     /lib/notifications.js
+ *  @requires     /assets/scripts/store.js
+ */
+
+ /**  @module Authentication */
+
+const Notification = require('../../../lib/notifications')
+const store = require('../store')
+
+/**
+* UI for Sign in Success
+* @function
+* @name onSignInSuccess
+* @param {object} data - user object returned from ajax request
+*/
+const onSignInSuccess = function (data) {
+  // Login Successfully Notification
+  new Notification('success', 'Login Successful')
+  // Get signin form
+  const form = document.getElementsByName('form-signin')[0]
+  // Clears form fields
+  form.reset()
+  toggleAuthView()
+  $('.name').text(data.user.email)
+  store.user = data.user
+  // Stores the users info in sessionStorage
+  sessionStorage.setItem('user', JSON.stringify(store.user))
+}
+
+/**
+* UI for Logout Success
+* @function
+* @name onLogoutSuccess
+*/
+const onLogoutSuccess = function () {
+  // Logout Successfully Notification
+  new Notification('success', 'Logout Successful')
+  toggleAuthView()
+  sessionStorage.removeItem('user')
+}
+
+/**
+* UI for Logout Error
+* @function
+* @name onLogoutError
+*/
+const onLogoutError = function () {
+}
+
+/**
+* UI for Signin Error
+* @function
+* @name onSignInError
+* @param {object} error - error returned from ajax request
+*/
+const onSignInError = function (error) {
+  new Notification('danger', error.statusText)
+  $('#signin-email').val('')
+  $('#signin-password').val('')
+}
+
+/**
+* UI for Signin Success
+* @function
+* @name onSignInSuccess
+* @param {object} data - user object returned from ajax request
+*/
+const onSignUpSuccess = function (data) {
+  // Shows Signin Form
+  $('.form-signin').show()
+  // Hides Signup Form
+  $('.form-signup').hide()
+  const form = document.getElementsByName('form-signup')[0]
+  form.reset()
+  new Notification('success', 'Signup Successful')
+}
+
+/**
+* UI for Signup Errors
+* @function
+* @name onSignUpError
+* @param {object} error - error returned from ajax request
+*/
+const onSignUpError = function (error) {
+  new Notification('danger', error.statusText)
+}
+
+/**
+* Shows Authentication View or Logged in View
+* @function
+* @name toggleAuthView
+*/
+const toggleAuthView = function () {
+  $('.auth-view').toggle()
+  $('.logged-in-view').toggle()
+}
+
+module.exports = {
+  onSignInSuccess,
+  onSignInError,
+  onSignUpError,
+  onSignUpSuccess,
+  onLogoutSuccess,
+  onLogoutError,
+  toggleAuthView
+}
+</code></pre>
+  </article>
+</section>
+
+    
+
+
+  </div>
+
+  <br class="clear">
+
+  <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+  </footer>
+
+  <script src="scripts/linenumber.js"></script>
+  <script src="scripts/pagelocation.js"></script>
+
+  
+  
+</body>
+</html>

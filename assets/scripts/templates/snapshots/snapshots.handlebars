@@ -1,82 +1,84 @@
-<div class="notification-area"> </div>
-<div class="clearfix">
-  <div class="col-md-12">
-    <table class="table table-hover snapshots-table table-responsive">
-      <thead>
-        <th> ID </th>
-        <th> Value </th>
-        <th> Source Name</th>
-        <th> Snapshot Type </th>
-        <th> Start Date </th>
-        <th> End Date </th>
-        <th> Unit </th>
-        <th> Edit </th>
-      </thead>
-      <tbody>
-        {{#each health_snapshots as |health_snapshot|}}
-          <tr>
-            <td> {{health_snapshot.id}} </td>
-            <td> {{health_snapshot.value}} </td>
-            <td> {{health_snapshot.source_name}} </td>
-            <td> {{health_snapshot.snapshot_type}} </td>
-            <td> {{health_snapshot.start_date}} </td>
-            <td> {{health_snapshot.end_date}} </td>
-            <td> {{health_snapshot.unit}} </td>
-            <td> <button class="btn btn-primary edit-snapshot-btn" value="{{health_snapshot.id}}"> Edit</button> </td>
-            <td> <button class="btn btn-danger delete-snapshot" value="{{health_snapshot.id}}"> Delete</button> </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+<div class="row">
+  <div class="notification-area"> </div>
+    <div class="col-md-12">
+      <table class="table table-hover snapshots-table table-responsive">
+        <thead>
+          <th> ID </th>
+          <th> Value </th>
+          <th> Source Name</th>
+          <th> Snapshot Type </th>
+          <th> Start Date </th>
+          <th> End Date </th>
+          <th> Unit </th>
+          <th> Edit </th>
+          <th> Delete </th>
+        </thead>
+        <tbody>
+          {{#each health_snapshots as |health_snapshot|}}
+            <tr>
+              <td> {{health_snapshot.id}} </td>
+              <td> {{health_snapshot.value}} </td>
+              <td> {{health_snapshot.source_name}} </td>
+              <td> {{health_snapshot.snapshot_type}} </td>
+              <td> {{health_snapshot.start_date}} </td>
+              <td> {{health_snapshot.end_date}} </td>
+              <td> {{health_snapshot.unit}} </td>
+              <td> <button class="btn btn-primary edit-snapshot-btn" value="{{health_snapshot.id}}"> Edit</button> </td>
+              <td> <button class="btn btn-danger delete-snapshot" value="{{health_snapshot.id}}"> Delete</button> </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   </div>
+  <div class="modal fade" tabindex="-1" role="dialog" id="edit-snapshot-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form class="edit-snapshot" name="edit-snapshot">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Edit Snapshot</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <label> Unit </label>
+                  <select name="health_snapshot[unit]" class="form-control">
+                    <option value="ml">ML</option>
+                    <option value="count">COUNT</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label> Value </label>
+                  <input type="text" class="form-control" name="health_snapshot[value]">
+                </div>
+                <div class="col-md-4">
+                  <label> Snapshot Type </label>
+                  <input type="text" class="form-control" name="health_snapshot[snapshot_type]">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <label> Source Name </label>
+                  <input type="text" class="form-control" name="health_snapshot[source_name]">
+                </div>
+                <div class="col-md-4">
+                  <label> Start Date </label>
+                  <input class="form-control" type="datetime-local" name="health_snapshot[start_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
+                </div>
+                <div class="col-md-4">
+                  <label> End Date </label>
+                  <input class="form-control" type="datetime-local" name="health_snapshot[end_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
+                </div>
+              </div>
+              <input type="hidden" class="snapshot-id">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 </div>
-<div class="modal fade" tabindex="-1" role="dialog" id="edit-snapshot-modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <form class="edit-snapshot" name="edit-snapshot">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Edit Snapshot</h4>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-              <div class="col-md-4">
-                <label> Unit </label>
-                <select name="health_snapshot[unit]" class="form-control">
-                  <option value="ml">ML</option>
-                  <option value="count">COUNT</option>
-                </select>
-              </div>
-              <div class="col-md-4">
-                <label> Value </label>
-                <input type="text" class="form-control" name="health_snapshot[value]">
-              </div>
-              <div class="col-md-4">
-                <label> Snapshot Type </label>
-                <input type="text" class="form-control" name="health_snapshot[snapshot_type]">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <label> Source Name </label>
-                <input type="text" class="form-control" name="health_snapshot[source_name]">
-              </div>
-              <div class="col-md-4">
-                <label> Start Date </label>
-                <input class="form-control" type="datetime-local" name="health_snapshot[start_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
-              </div>
-              <div class="col-md-4">
-                <label> End Date </label>
-                <input class="form-control" type="datetime-local" name="health_snapshot[end_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
-              </div>
-            </div>
-            <input type="hidden" class="snapshot-id">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-      </form>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->

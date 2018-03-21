@@ -1,4 +1,9 @@
 <h1> HealthMonitor </h1>
+<h2> Github Links </h2>
+<br>
+<a href="https://github.com/ppilon/healthmon-api"> Healthmon API </a>
+<br>
+<a href="https://github.com/ppilon/healthmon"> Healthmon</a>
 <h2> Technologies Used </h2>
   <ul>
     <li> HTML
@@ -22,7 +27,8 @@
   <li> As a user I might want to upload an xml file of all my data. </li>
   <li> As a user I might want to share my data with a doctor</li>
   <h2> Front End Diagram </h2>
-  <a href="https://imgur.com/w351xvK"><img src="https://i.imgur.com/w351xvK.jpg" title="source: imgur.com" /></a>
+  <br>
+  <a href="https://imgur.com/w351xvK">View Here</a>
   <h2> Future Features </h2>
   <ul>
     <li> Allow the user to upload xml file </li>
@@ -30,21 +36,14 @@
   </ul>
 
   <h2> Development Process </h2>
-  <ol>
+  <ul>
     <li> Signup </li>
     <li> Signin </li>
     <li> User Interface(navbar, sidebar, user menu) </li>
     <li> User Update </li>
     <li> User Password Change </li>
-  <li> User can create a health snapshot </li>
+    <li> User can create a health snapshot </li>
     <li> Created table of health snapshots </li>
     <li> Allowed the user to edit a health snapshot </li>
     <li> Allowed the user to delete a health snapshot </li>
   </ol>
-<h2> Know Bugs </h2>
-
-<ul>
-  <li> Content overflows causing space between the sidebar and navbar 
-</ul>
-<h1> API </h1>
-<a href="https://github.com/ppilon/healthmon-api"> Link to API </li>
