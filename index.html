@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>HealthMonitor</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+    </head>
+    <body>
+      <div class="auth-view text-center">
+        <form class="form-center form-signin" name="form-signin">
+          <div class="notification-area"> </div>
+          <i class="fas fa-heartbeat fa-10x logo"></i>
+          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <label for="signin-email" class="sr-only">Email address</label>
+          <input type="email" id="signin-email" class="form-control" name="credentials[email]" placeholder="Email address" required autofocus>
+          <label for="signin-password" class="sr-only">Password</label>
+          <input type="password" id="signin-password" class="form-control" name="credentials[password]" placeholder="Password" required>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+          <p class="mt-5 mb-3 text-muted copyright">&copy; HealthMonitor LLC</p>
+          <a href="#signup" class="toggle-signup-view"> No Account? Click Here to Signup </a>
+        </form>
+        <form class="form-center form-signup" name="form-signup">
+          <div class="notification-area"> </div>
+          <i class="fas fa-heartbeat fa-10x logo"></i> <br>
+          <label for="signup-email"> Email Address: </label>
+          <input type="text" class="form-control" id="signup-email" name="credentials[email]">
+          <label for="signup-password"> Password: </label>
+          <input type="password" class="form-control" id="singup-password" name="credentials[password]">
+          <label for="signup-password_confirmation"> Password Confirmation: </label>
+          <input type="password" class="form-control" id="signup-password-confirmation" name="credentials[password_confirmation]">
+          <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">Sign Up</button>
+          <p class="mt-5 mb-3 text-muted copyright">&copy; HealthMonitor LLC</p>
+          <a href="#login" class="toggle-login-view"> Ready to Login </a>
+        </form>
+      </div>
+      <div class="container-fluid logged-in-view">
+        <div class="row">
+          <div class="nav brand-nav">
+            <div class="brand">
+              <span><i class="fas fa-heartbeat"></i></span>
+              <span class="brand-text"> HealthMon </span>
+            </div>
+            <i class="fas fa-align-justify toggle-sidebar"></i>
+          </div>
+          <div class="nav main-nav">
+            <ul class="no-bullets nav navbar-nav navbar-right user-nav">
+                <li class="hide-default"> <a href="#" class="open-snapshot-modal">CREATE SNAPSHOT</a></li>
+                <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><span class="name"> </span><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="user-profile-toggle"><i class="fas fa-user user-nav-icon"></i>User Profile</a></li>
+                    <li><a href="#" class="logout"><i class="fas fa-lock user-nav-icon"></i>Logout</a></li>
+                  </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-fixed sidebar">
+            <ul class="no-bullets sidebar-menu">
+              <li> <a href="" class="toggle-snapshots"><i class="fas fa-medkit icon"></i>Health Snapshots </a> </li>
+            </ul>
+          </div>
+          <div class="col-md-12 main">
+            <div class="row">
+              <div class="col-md-12 content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    <div class="modal fade" tabindex="-1" role="dialog" id="create-snapshot-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form class="create-snapshot" name="create-snapshot">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2> Create Snapshot </h2>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label> Unit </label>
+                          <select name="health_snapshot[unit]" class="form-control">
+                            <option value="ml">ML</option>
+                            <option value="count">COUNT</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <label> Value </label>
+                          <input type="input" class="form-control" name="health_snapshot[value]" placeholder="Must be a number">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label> Snapshot Type </label>
+                          <input type="input" class="form-control" name="health_snapshot[snapshot_type]" placeholder="example: heartbeat">
+                        </div>
+                        <div class="col-md-6">
+                          <label> Source Name </label>
+                          <input type="input" class="form-control" name="health_snapshot[source_name]" placeholder="example: Phil's iPhone">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label> Start Date </label>
+                          <input class="form-control" type="datetime-local" name="health_snapshot[start_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
+                        </div>
+                        <div class="col-md-6">
+                          <label> End Date </label>
+                          <input class="form-control" type="datetime-local" name="health_snapshot[end_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary create-snapshot-btn">Create Snapshot</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </form>
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+</html>
