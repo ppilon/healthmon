@@ -13,6 +13,7 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
+
 /**
 * Snapshot Handlers
 * @name snapshotHandlers
@@ -25,7 +26,11 @@ const snapshotHandlers = function () {
   $('body').on('click', '.toggle-snapshots', function (event) {
     event.preventDefault()
     $('.content').empty()
+    $('.open-snapshot-modal').css('display', 'block')
     onGetSnapshots(event)
+  })
+  $('body').on('click', '.open-snapshot-modal', function() {
+    $('#create-snapshot-modal').modal('show')
   })
 }
 /**

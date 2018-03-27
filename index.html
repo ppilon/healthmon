@@ -53,6 +53,7 @@
           </div>
           <div class="nav main-nav">
             <ul class="no-bullets nav navbar-nav navbar-right user-nav">
+                <li class="hide-default"> <a href="#" class="open-snapshot-modal">CREATE SNAPSHOT</a></li>
                 <li class="dropdown">
                   <a href="#" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><span class="name"> </span><b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -77,4 +78,62 @@
         </div>
       </div>
     </body>
+    <div class="modal fade" tabindex="-1" role="dialog" id="create-snapshot-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form class="create-snapshot" name="create-snapshot">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2> Create Snapshot </h2>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label> Unit </label>
+                          <select name="health_snapshot[unit]" class="form-control">
+                            <option value="ml">ML</option>
+                            <option value="count">COUNT</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <label> Value </label>
+                          <input type="input" class="form-control" name="health_snapshot[value]" placeholder="Must be a number">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label> Snapshot Type </label>
+                          <input type="input" class="form-control" name="health_snapshot[snapshot_type]" placeholder="example: heartbeat">
+                        </div>
+                        <div class="col-md-6">
+                          <label> Source Name </label>
+                          <input type="input" class="form-control" name="health_snapshot[source_name]" placeholder="example: Phil's iPhone">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label> Start Date </label>
+                          <input class="form-control" type="datetime-local" name="health_snapshot[start_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
+                        </div>
+                        <div class="col-md-6">
+                          <label> End Date </label>
+                          <input class="form-control" type="datetime-local" name="health_snapshot[end_date]" placeholder="YYYY-MM-DD hh:mm:ss" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary create-snapshot-btn">Create Snapshot</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </form>
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 </html>

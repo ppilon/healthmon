@@ -13,3 +13,4 @@ if ('user' in sessionStorage) {
 module.exports = {
   user
 }
+console.log(user)
